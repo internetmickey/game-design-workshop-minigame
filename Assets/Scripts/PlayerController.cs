@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrounded;
     Rigidbody rb;
+    public AudioSource audioSource;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            audioSource.Play();
         }
     }
 }
